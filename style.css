@@ -9,7 +9,7 @@
    display: flex;
    flex-direction: column;
    justify-content: stretch;
-   background-color: #333;
+   /* background-color: #333; */
 }
 
 header {
@@ -75,3 +75,20 @@ main {
 .arrow-backward {
    left: 20px;
 }
+
+.circle-buttons {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   margin-top: 20px;
+}
+
+.circle-buttons div {
+   padding: 8px;
+   border-radius: 50%;
+   background-color: #f1f0f0;
+}
+
+/* .circle-buttons div:hover {
+   background-color: red;
+} */

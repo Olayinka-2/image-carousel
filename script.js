@@ -7,8 +7,10 @@ const images = [
 
 const imgContainer = document.querySelector(".img-container");
 const arrowContainer = document.querySelector(".arrow");
+const navigationBtnDiv = document.querySelector(".circle-buttons");
 
 // document.addEventListener('DOMContentLoaded', displayImage);
+
 
 function displayImage(event) {
 
@@ -16,7 +18,7 @@ function displayImage(event) {
    let image = document.querySelector('.main-img');
          image.src = imagePosition.src;
          image.alt = imagePosition.alt;
-      }
+}
 
       function selectImage(event) {
          let target = event.target;
@@ -25,9 +27,9 @@ function displayImage(event) {
          let imageIndex;
          let image = document.querySelector('.main-img');
       
-         // Compare the image name, not full path
+
          images.forEach((img, index) => {
-            // Extract the file name from the image.src (ignores full path)
+
             let imageFileName = image.src.split('/').pop(); 
       
             // Now compare only the file names
@@ -36,7 +38,7 @@ function displayImage(event) {
             }
          });
       
-         if (target !== arrowContainer) {
+         if (target !== arrowContainer || target !== navigationBtnDiv) {
             targetClassAction = target.className;
             switch (targetClassAction) {
                case "arrow-forward":
@@ -45,9 +47,22 @@ function displayImage(event) {
                case "arrow-backward":
                   imageIndex = (imageIndex - 1 + images.length) % images.length; // Loop back to the last image
                   break;
+               case "circle1":
+                  imageIndex = 0;
+                  break;
+               case "circle2":
+                  imageIndex = 1;
+                  break;
+               case "circle3":
+                  imageIndex = 2;
+                  break;
+               case "circle4":
+                  imageIndex = 3;
+                  break;
             }
          }
          return images[imageIndex];
       }
 
 arrowContainer.addEventListener("click", displayImage);
+navigationBtnDiv.addEventListener("click", displayImage)
