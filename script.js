@@ -20,7 +20,6 @@ function displayImage(event) {
          image.alt = imagePosition.alt;
 
          let navigatingBtnDiv = event.target.parentNode;
-         let navigatingBtnDivChildren = Array.from(navigatingBtnDiv.children);
          const imageNumber = document.querySelector(".main-img").alt.at(0);
 
          if(navigatingBtnDiv == arrowContainer) {
