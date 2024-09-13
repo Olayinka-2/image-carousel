@@ -1,8 +1,8 @@
 const images = [
-   {src: "./images/one.jpg", alt: "first-image"},
-   {src: "./images/two.jpg", alt: "second-image"},
-   {src: "./images/three.jpg", alt: "third-image"},
-   {src: "./images/four.jpg", alt: "fourth-image"}
+   {src: "./images/one.jpg", alt: "1-image"},
+   {src: "./images/two.jpg", alt: "2-image"},
+   {src: "./images/three.jpg", alt: "3-image"},
+   {src: "./images/four.jpg", alt: "4-image"}
 ];
 
 const imgContainer = document.querySelector(".img-container");
@@ -18,6 +18,32 @@ function displayImage(event) {
    let image = document.querySelector('.main-img');
          image.src = imagePosition.src;
          image.alt = imagePosition.alt;
+
+         let navigatingBtnDiv = event.target.parentNode;
+         let navigatingBtnDivChildren = Array.from(navigatingBtnDiv.children);
+         const imageNumber = document.querySelector(".main-img").alt.at(0);
+
+         if(navigatingBtnDiv == arrowContainer) {
+            let children = Array.from(navigationBtnDiv.children);
+            console.log(children);
+            children.forEach(element => {
+               element.style.backgroundColor = 'white';
+               let classNumber = ".circle" + imageNumber;
+               let changeDiv = document.querySelector(classNumber);
+               changeDiv.style.backgroundColor = "red";
+            });
+         }
+
+         if(navigatingBtnDiv == navigationBtnDiv) {
+            navigatingBtnDivChildren.forEach(element => {
+               element.style.backgroundColor = 'white';
+               let classNumber = ".circle" + imageNumber;
+               let changeDiv = document.querySelector(classNumber);
+               changeDiv.style.backgroundColor = "red";
+            });
+         }
+
+      
 }
 
       function selectImage(event) {
