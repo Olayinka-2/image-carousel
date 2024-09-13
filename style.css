@@ -89,6 +89,6 @@ main {
    background-color: #f1f0f0;
 }
 
-/* .circle-buttons div:hover {
+.circle-buttons div:first-child {
    background-color: red;
-} */
+}
