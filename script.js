@@ -24,27 +24,26 @@ function displayImage(event) {
          const imageNumber = document.querySelector(".main-img").alt.at(0);
 
          if(navigatingBtnDiv == arrowContainer) {
-            let children = Array.from(navigationBtnDiv.children);
-            console.log(children);
-            children.forEach(element => {
-               element.style.backgroundColor = 'white';
-               let classNumber = ".circle" + imageNumber;
-               let changeDiv = document.querySelector(classNumber);
-               changeDiv.style.backgroundColor = "red";
-            });
+            updateCircleColor(imageNumber);
          }
 
          if(navigatingBtnDiv == navigationBtnDiv) {
-            navigatingBtnDivChildren.forEach(element => {
-               element.style.backgroundColor = 'white';
-               let classNumber = ".circle" + imageNumber;
-               let changeDiv = document.querySelector(classNumber);
-               changeDiv.style.backgroundColor = "red";
-            });
+            updateCircleColor(imageNumber);
          }
 
       
 }
+
+function updateCircleColor(imageNumber) {
+   const children = Array.from(navigationBtnDiv.children);
+   children.forEach(element => {
+       element.style.backgroundColor = 'white';
+   });
+   let classNumber = ".circle" + imageNumber;
+   let changeDiv = document.querySelector(classNumber);
+   changeDiv.style.backgroundColor = "red";
+}
+
 
       function selectImage(event) {
          let target = event.target;
